@@ -132,6 +132,26 @@ public class Main {
     }
 
     public static void searchBook(){
+        Scanner input = new Scanner(System.in);
 
+        System.out.print("Book ID : ");
+        String id = input.nextLine();
+
+        new Book(id);
+
+        Session session = FactoryConfiguration.getInstance().getSession();
+        Transaction transaction = session.beginTransaction();
+
+        try {
+            Book book = session.get(Book.class, id);
+            System.out.println(book.toString());
+            transaction.commit();
+
+        }catch (Exception e){
+            System.out.println("Don't Mach ID, Try Again!!");
+        }finally {
+            session.close();
+            options();
+        }
     }
 }
