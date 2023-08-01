@@ -5,7 +5,6 @@ import org.example.entity.Book;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
-import java.io.IOException;
 import java.util.Scanner;
 
 public class Main {
