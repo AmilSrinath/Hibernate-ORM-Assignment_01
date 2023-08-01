@@ -1,14 +1,19 @@
 package org.example;
 
+import org.example.Util.FactoryConfiguration;
+import org.example.entity.Book;
+import org.hibernate.Session;
+import org.hibernate.Transaction;
+
 import java.io.IOException;
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
         options();
     }
 
-    public static void options() throws IOException {
+    public static void options() {
         Scanner input = new Scanner(System.in);
         f:while (true) {
             for (int i = 0; i < 30; i++) {
@@ -42,7 +47,32 @@ public class Main {
     }
 
     public static void saveBook(){
+        Scanner input = new Scanner(System.in);
 
+        System.out.print("Book ID : ");
+        String id = input.nextLine();
+
+        System.out.print("Book ISBN : ");
+        String isbn = input.nextLine();
+
+        System.out.print("Book Title : ");
+        String title = input.nextLine();
+
+        System.out.print("Book Author : ");
+        String author = input.nextLine();
+
+        Session session = FactoryConfiguration.getInstance().getSession();
+        Transaction transaction = session.beginTransaction();
+
+        session.persist(new Book(
+                id,
+                isbn,
+                title,
+                author
+        ));
+        transaction.commit();
+        session.close();
+        options();
     }
 
     public static void updateBook(){
