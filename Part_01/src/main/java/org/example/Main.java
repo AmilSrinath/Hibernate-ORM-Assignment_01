@@ -109,7 +109,26 @@ public class Main {
     }
 
     public static void deleteBook(){
+        Scanner input = new Scanner(System.in);
 
+        System.out.print("Book ID : ");
+        String id = input.nextLine();
+
+        Session session = FactoryConfiguration.getInstance().getSession();
+        Transaction transaction = session.beginTransaction();
+
+        try {
+            session.delete(new Book(
+                    id
+            ));
+            transaction.commit();
+            options();
+        }catch (Exception e){
+            System.out.println("Don't Mach ID, Try Again!!");
+        }finally {
+            session.close();
+            options();
+        }
     }
 
     public static void searchBook(){
