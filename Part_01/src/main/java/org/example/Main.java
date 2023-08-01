@@ -76,7 +76,36 @@ public class Main {
     }
 
     public static void updateBook(){
+        Scanner input = new Scanner(System.in);
 
+        System.out.print("Book ID : ");
+        String id = input.nextLine();
+
+        System.out.print("Book ISBN : ");
+        String isbn = input.nextLine();
+
+        System.out.print("Book Title : ");
+        String title = input.nextLine();
+
+        System.out.print("Book Author : ");
+        String author = input.nextLine();
+
+        Session session = FactoryConfiguration.getInstance().getSession();
+        Transaction transaction = session.beginTransaction();
+        try{
+            session.update(new Book(
+                    id,
+                    isbn,
+                    title,
+                    author
+            ));
+            transaction.commit();
+        }catch (Exception ex){
+            System.out.println("Don't Mach ID, Try Again!!");
+        }finally {
+            session.close();
+            options();
+        }
     }
 
     public static void deleteBook(){
