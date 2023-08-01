@@ -10,7 +10,6 @@
     <packaging>pom</packaging>
     <modules>
         <module>Part_01</module>
-        <module>Part_02</module>
     </modules>
 
     <properties>
