@@ -1,5 +1,6 @@
 package org.example.util;
 
+import org.example.entity.Author;
 import org.example.entity.Book;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -9,7 +10,7 @@ public class FactoryConfiguration {
     private static FactoryConfiguration factoryConfiguration;
     private SessionFactory sessionFactory;
     private FactoryConfiguration(){
-        Configuration configuration = new Configuration().configure().addAnnotatedClass(Book.class);
+        Configuration configuration = new Configuration().configure().addAnnotatedClass(Book.class).addAnnotatedClass(Author.class);
         sessionFactory = configuration.buildSessionFactory();
     }
 

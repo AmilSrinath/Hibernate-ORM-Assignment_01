@@ -9,7 +9,6 @@ public class Book {
     private String bid;
     private String ISBN;
     private String title;
-    private String author;
 
     public String getBid() {
         return bid;
@@ -35,19 +34,11 @@ public class Book {
         this.title = title;
     }
 
-    public String getAuthor() {
-        return author;
-    }
 
-    public void setAuthor(String author) {
-        this.author = author;
-    }
-
-    public Book(String bid, String ISBN, String title, String author) {
+    public Book(String bid, String ISBN, String title) {
         this.bid = bid;
         this.ISBN = ISBN;
         this.title = title;
-        this.author = author;
     }
 
     public Book() {
@@ -59,14 +50,12 @@ public class Book {
                 "bid='" + bid + '\'' +
                 ", ISBN='" + ISBN + '\'' +
                 ", title='" + title + '\'' +
-                ", author='" + author + '\'' +
                 '}';
     }
 
-    public Book(String ISBN, String title, String author) {
+    public Book(String ISBN, String title) {
         this.ISBN = ISBN;
         this.title = title;
-        this.author = author;
     }
 
     public Book(String bid) {
