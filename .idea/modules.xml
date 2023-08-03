@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/ORM_Assignment_01.iml" filepath="$PROJECT_DIR$/ORM_Assignment_01.iml" />
       <module fileurl="file://$PROJECT_DIR$/Part_01.iml" filepath="$PROJECT_DIR$/Part_01.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Part_02/one_to_one/one_to_one (2).iml" filepath="$PROJECT_DIR$/Part_02/one_to_one/one_to_one (2).iml" />
     </modules>
   </component>
 </project>

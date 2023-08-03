@@ -9,6 +9,7 @@
         <module name="Part_01" />
         <module name="one_to_one (2)" />
         <module name="one_to_one (1)" />
+        <module name="one_to_one (3)" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
