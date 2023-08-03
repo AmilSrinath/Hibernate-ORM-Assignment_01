@@ -29,7 +29,26 @@ After going to the 4th option, a saved book can be searched. It is as follows.
 </ol>
 
 <h2>1. One To One</h2>
+Here there are 2 entities with a one to one relationship. They are Book and Author. There are 4 options here.
 
+<img width="366" alt="Screenshot 2023-08-03 at 10 42 31 PM" src="https://github.com/AmilSrinath/Hibernate-ORM-Assignment_01/assets/123743742/fcd1405e-54f6-497f-87bd-d14723ea435f">
+
+With the first option, you can save a book and an author.
+
+<img width="366" alt="Screenshot 2023-08-03 at 10 41 42 PM" src="https://github.com/AmilSrinath/Hibernate-ORM-Assignment_01/assets/123743742/547578da-0336-4374-8f39-5f09961159e8">
+
+With the second option, you can update a book and an author.
+
+<img width="366" alt="Screenshot 2023-08-03 at 10 54 25 PM" src="https://github.com/AmilSrinath/Hibernate-ORM-Assignment_01/assets/123743742/59b0ac0f-a875-4aaf-aa4e-9f73475e5f87">
+
+With the third option, you can delete a book and an author.
+
+<img width="375" alt="Screenshot 2023-08-03 at 10 57 22 PM" src="https://github.com/AmilSrinath/Hibernate-ORM-Assignment_01/assets/123743742/5b5a1283-830f-4fcf-8b7d-4303ddc28481">
+
+
+With the third option, you can search a book and an author.
+
+<img width="657" alt="Screenshot 2023-08-03 at 10 56 35 PM" src="https://github.com/AmilSrinath/Hibernate-ORM-Assignment_01/assets/123743742/402d5bd4-7fe6-420d-9c81-f80bc3245f96">
 
 
 <h2>2. One To Many</h2>
