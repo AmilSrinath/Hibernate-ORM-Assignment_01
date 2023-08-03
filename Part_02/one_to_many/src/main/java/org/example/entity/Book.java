@@ -2,6 +2,10 @@ package org.example.entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import org.hibernate.annotations.Cascade;
+import org.hibernate.annotations.CascadeType;
 
 @Entity
 public class Book {
@@ -9,6 +13,18 @@ public class Book {
     private String bid;
     private String ISBN;
     private String title;
+    @ManyToOne
+    private Author author;
+
+    @Override
+    public String toString() {
+        return "Book{" +
+                "bid='" + bid + '\'' +
+                ", ISBN='" + ISBN + '\'' +
+                ", title='" + title + '\'' +
+                ", author=" + author +
+                '}';
+    }
 
     public String getBid() {
         return bid;
@@ -34,31 +50,21 @@ public class Book {
         this.title = title;
     }
 
+    public Author getAuthor() {
+        return author;
+    }
 
-    public Book(String bid, String ISBN, String title) {
-        this.bid = bid;
-        this.ISBN = ISBN;
-        this.title = title;
+    public void setAuthor(Author author) {
+        this.author = author;
     }
 
     public Book() {
     }
 
-    @Override
-    public String toString() {
-        return "Book{" +
-                "bid='" + bid + '\'' +
-                ", ISBN='" + ISBN + '\'' +
-                ", title='" + title + '\'' +
-                '}';
-    }
-
-    public Book(String ISBN, String title) {
+    public Book(String bid, String ISBN, String title, Author author) {
+        this.bid = bid;
         this.ISBN = ISBN;
         this.title = title;
-    }
-
-    public Book(String bid) {
-        this.bid = bid;
+        this.author = author;
     }
 }

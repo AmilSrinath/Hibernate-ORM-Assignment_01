@@ -1,9 +1,11 @@
 package org.example.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.OneToOne;
+import jakarta.persistence.*;
+import org.hibernate.annotations.Cascade;
+import org.hibernate.annotations.CascadeType;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 public class Author {
@@ -11,16 +13,17 @@ public class Author {
     private String aid;
     private String name;
     private String email;
-    @OneToOne
-    private Book book;
+    @OneToMany( mappedBy = "author")
+    @Cascade(value = CascadeType.ALL)
+    private List<Book> books = new ArrayList<>();
 
     @Override
     public String toString() {
         return "Author{" +
                 "aid='" + aid + '\'' +
                 ", name='" + name + '\'' +
-                ", email=" + email +
-                ", bid='" + book + '\'' +
+                ", email='" + email + '\'' +
+                ", books=" + books +
                 '}';
     }
 
@@ -48,21 +51,21 @@ public class Author {
         this.email = email;
     }
 
-    public Book getBid() {
-        return book;
+    public List<Book> getBooks() {
+        return books;
     }
 
-    public void setBid(Book book) {
-        this.book = book;
+    public void setBooks(List<Book> books) {
+        this.books = books;
     }
 
     public Author() {
     }
 
-    public Author(String aid, String name, String email, Book book) {
+    public Author(String aid, String name, String email, List<Book> books) {
         this.aid = aid;
         this.name = name;
         this.email = email;
-        this.book = book;
+        this.books = books;
     }
 }
